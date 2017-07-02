@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Jem Doulton</title>
+    <link rel="stylesheet" href="jdoulton.css" />
+    <link rel="shortcut icon" href="icon_stripes2.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+<div id="main">
+<h1>JEM DOULTON</h1>
+<p id="nav">
+<b>MUSIC</b><a href="art.html">ART</a><a href="fashion.html">FASHION</a>
+</p>
+<br />
+<div style="position:absolute">
+<img src="images/poland_bigger.jpg" id="drumming" style="position:absolute;left:-250px;top:10px;width:220px;height:147px">
+<script>
+
+var big = false;
+
+d3.select('#drumming').on('click', function(){
+
+    big = !big
+
+    d3.select('#drumming')
+	.transition()
+	.duration(300)
+	.style('left', big ? -80 : -250)
+	.style('width', big ? 600 : 220)
+	.style('height', big ? 400 : 147)
+
+})
+	
+
+</script>
+</div>
+<p>
+Currently drumming with <a href="https://www.youtube.com/watch?v=Sv8ciafX9Pk&list=LLN3dHk-Jj-8bkYSOA1LKgQA&index=5">R&oacute;is&iacute;n Murphy (Moloko)</a><br />
+<br />
+<br />
+<a href="http://fuseboxcity.com/">Fuse Box City</a><br />
+<br />
+<br />
+<a href="http://deaddaysbeyondhelp.bandcamp.com/">Dead Days Beyond Help</a><br />
+<br />
+<br />
+<a href="http://mrronjetson.bandcamp.com/">Mr Ron Jetson</a></p>
+<br />
+<b>Also works with</b>
+<br />
+<br />
+<br />
+<a href="https://www.youtube.com/watch?v=i5VqzE48uX4&t=20s&index=3&list=LLN3dHk-Jj-8bkYSOA1LKgQA">Thurston Moore Band</a><br />
+<br />
+<br />
+<a href="https://sites.google.com/site/alexwardmusician/forebrace">Forebrace</a><br />
+<br />
+<br />
+<a href="http://www.peterandthedanishdefence.com/">Peter &amp; The Danish Defence</a><br />
+<br />
+<br />
+<br />
+For recording, private drum tuition or jazz functions, please contact me.<br />
+<br />
+<br />
+<a href="https://jemdoulton.bandcamp.com/releases">And here's some solo/miscellaneous stuff...</a>
+</p>
+    <div id="contact">
+        <a href="https://www.facebook.com/jemdoulton" class="icon"><img src="images/facebook.png"></a>
+
+        <a href="https://instagram.com/jemdoulton" class="icon"><img src="images/instagram.png"></a>
+
+        <a href="https://www.youtube.com/playlist?list=LLN3dHk-Jj-8bkYSOA1LKgQA" class="icon youtube"><img src="images/youtube.png"></a>
+
+        <a href="mailto:jdoulton@gmail.com">jdoulton@gmail.com</a>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+
+</body>
+</html>

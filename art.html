@@ -1,0 +1,111 @@
+<html>
+<head>
+    <title>Jem Doulton</title>
+    <link rel="stylesheet" href="jdoulton.css" />
+    <link rel="shortcut icon" href="icon_stripes2.png">
+    <script src="d3.min.js"></script>
+    <script>
+
+function init(){
+    d3.json('thumbnails/site.json', function(data){
+        function showSlideshow(item, index){
+          
+            function src(){
+                index = index % data.length
+                while (index < 0){index += item.children.length}
+                return 'paintings/' + data[index].name;
+            }
+
+            var navHeight = document.body.clientHeight / 2 - 20 + 'px';
+
+            greyOut = d3.select('body')
+                .append('div')
+                .attr('class','greyOut')
+
+            var detailImage = greyOut.append('img')
+                .attr('class','detail')
+
+            function redraw(){
+                var s = src()
+                var type = s.split('.').pop()
+                detailImage
+                    .style('display','block')
+                    .attr('src', src())
+            }
+
+            greyOut.append('img')
+                .attr('class','closer')
+                .attr('src', 'images/close-blue.png')
+                .on('click', function(){
+                    greyOut.remove()
+                })
+
+            greyOut.append('img')
+                .attr('class','left')
+                .attr('src', 'images/left-blue.png')
+                .style('top', navHeight)
+                .on('click', function(){
+                    index--;
+                    redraw();
+                })
+
+            greyOut.append('img')
+                .attr('class','right')
+                .attr('src', 'images/right-blue.png')
+                .style('top', navHeight)
+                .on('click', function(){
+                    index++;
+                    redraw();
+                })
+
+            redraw()
+        }
+
+
+        d3.select('#thumbnails')
+            .selectAll('img')
+            .data(data)
+            .enter()
+            .append('img')
+            .attr('src', function(d){
+                return 'thumbnails/' + d.name
+            })
+            .on('click', showSlideshow)
+    })
+}
+
+    </script>
+</head>
+<body onload="init()">
+
+<div id="main">
+
+<h1>JEM DOULTON</h1>
+<p id="nav">
+<a href="index.html">MUSIC</a><b>ART</b><a href="fashion.html">FASHION</a>
+</p>
+<br />
+</div>
+
+<div id="thumbnails">
+
+
+</div>
+    <div id="contact">
+        <a href="https://www.facebook.com/jemdoulton" class="icon"><img src="images/facebook.png"></a>
+
+        <a href="https://instagram.com/jemdoulton" class="icon"><img src="images/instagram.png"></a>
+
+        <a href="https://www.youtube.com/playlist?list=LLN3dHk-Jj-8bkYSOA1LKgQA" class="icon youtube"><img src="images/youtube.png"></a>
+
+        <a href="mailto:jdoulton@gmail.com">jdoulton@gmail.com</a>
+    </div>
+
+<br />
+<br />
+<br />
+
+<div id="paintings"></div>
+
+</body>
+</html>
