@@ -76,9 +76,9 @@ h1 {
     border:1pt solid rgba(0,136,204,1);
 }
 
-.icon:nth-child(3) {
+/* .icon:nth-child(3) {
     margin-right:10px;
-}
+} */
 
 #thumbnails {
     padding-top:20px;
