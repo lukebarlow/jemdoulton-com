@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jem Doulton</title>
     <link rel="stylesheet" href="jdoulton.css" />
     <link rel="shortcut icon" href="icon_stripes2.png">
@@ -13,8 +14,8 @@ Musician from London, mostly drums and percussion.
 <b></b><a 
 </p>
 <br />
-<div style="position:absolute">
-<img src="images/TM Grenoble 4.jpeg" id="drumming" style="position:absolute;left:-250px;top:10px;width:220px;height:147px">
+<div id="drumming-container">
+<img src="images/TM Grenoble 4.jpeg" id="drumming">
 <script>
 
 var big = false;
@@ -26,9 +27,7 @@ d3.select('#drumming').on('click', function(){
     d3.select('#drumming')
 	.transition()
 	.duration(300)
-	.style('left', big ? -80 : -250)
-	.style('width', big ? 600 : 220)
-	.style('height', big ? 400 : 147)
+	.classed('big', big)
 
 })
 	

@@ -146,3 +146,95 @@ a img:hover, #thumbnails img:hover {
     left:0;
     right:0;
 }
+
+/* Drumming image styles */
+#drumming-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#drumming {
+    width: 220px;
+    height: 147px;
+    cursor: pointer;
+    transition: width 300ms, height 300ms;
+}
+
+#drumming.big {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 28pt;
+    }
+    
+    #main {
+        max-width: 100%;
+    }
+    
+    #contact {
+        max-width: 100%;
+        padding-top: 20px;
+    }
+    
+    #thumbnails {
+        max-width: 100%;
+    }
+    
+    #drumming {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    
+    #drumming.big {
+        max-width: 100%;
+    }
+    
+    .detail {
+        max-width: 90%;
+        max-height: 70%;
+        margin-top: 60px;
+    }
+    
+    .closer {
+        right: 10px;
+        top: 10px;
+    }
+    
+    .left {
+        margin-left: 10px;
+    }
+    
+    .right {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24pt;
+    }
+    
+    body {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    #nav *:not(:first-child) {
+        padding-left: 10px;
+    }
+    
+    #contact .icon img {
+        width: 24px;
+        padding: 8px;
+    }
+}
